@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-      <img src="http://www.asdalcione.it/wp-content/uploads/2016/08/jk-placeholder-image-1.jpg" alt="placeholder">
+      <img :src="music.poster" alt="placeholder">
       <h2>Titolo album</h2>
       <p>Autore Album</p>
       <span>Anno album</span>
@@ -19,8 +19,6 @@ export default {
 <style lang="scss" scoped>
 .card {
     background-color: var(--primary-color);
-    max-width: 230px;
-    width: 230px;
     max-height: 350px;
     height: 350px;
     padding: 20px;
@@ -29,6 +27,10 @@ export default {
     & h2 {
         color: #fff;
         margin-top: 15px;
+    }
+
+    & img {
+        width: 100%;
     }
 
     & p {

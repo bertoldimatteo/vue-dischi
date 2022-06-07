@@ -2,7 +2,7 @@
   <main>
     <div class="container">
         <div class="row">
-            <MusicCard class="col" v-for="(music ,index) in musics" :key="index"/>      
+            <MusicCard class="col" v-for="(music ,index) in musics" :key="index" :music="music"/>      
         </div>
     </div>
   </main>
