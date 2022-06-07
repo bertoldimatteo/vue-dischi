@@ -2,7 +2,7 @@
   <main>
     <div class="container">
         <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 music-card"></div>
+            <MusicCard class="col-sm-12 col-md-4 col-lg" v-for="(music ,index) in musics" :key="index"/>      
         </div>
     </div>
   </main>
@@ -10,12 +10,17 @@
 
 <script>
 import axios from 'axios';
+import MusicCard from '../commons/MusicCard.vue';
+
 export default {
     name: 'BaseMain',
     data() {
         return {
             musics: [],
         }
+    },
+    components: {
+        MusicCard,
     },
     created() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
@@ -35,7 +40,7 @@ export default {
 main {
     background-color: var(--seconday-color);
 }
-.music-card {
-    background-color: var(--primary-color);
+.container {
+    padding: 100px;
 }
 </style>
