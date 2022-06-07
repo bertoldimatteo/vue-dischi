@@ -13,6 +13,7 @@ export default {
 <style lang="scss" scoped>
 header {
     background-color: var( --primary-color);
+    max-height: 66px;
 
     & img {
         max-width: 4%;

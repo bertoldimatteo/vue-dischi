@@ -19,14 +19,15 @@ export default {
 <style lang="scss" scoped>
 .card {
     background-color: var(--primary-color);
-    max-height: 350px;
-    height: 350px;
+    max-height: 380px;
+    height: 380px;
     padding: 20px;
     text-align: center;
     
     & h2 {
         color: #fff;
-        margin-top: 15px;
+        margin-top: 10px;
+        font-size: 29px;
     }
 
     & img {
@@ -39,6 +40,9 @@ export default {
     }
     & p, span {
         color: #808080;
+    }
+    & span {
+        font-size: 13px;
     }
 }
 </style>

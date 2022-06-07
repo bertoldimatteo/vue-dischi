@@ -39,9 +39,7 @@ export default {
 <style lang="scss" scoped>
 main {
     background-color: var(--seconday-color);
-}
-.container {
-    padding: 50px;
+    height: calc(100vh - 66px)
 }
 .row {
     max-width: 1220px;
