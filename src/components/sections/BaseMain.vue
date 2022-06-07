@@ -40,6 +40,9 @@ export default {
 main {
     background-color: var(--seconday-color);
 }
+.container {
+    padding: 50px;
+}
 .row {
     max-width: 1220px;
     margin: auto;

@@ -1,9 +1,9 @@
 <template>
   <div class="card">
-      <img :src="music.poster" alt="placeholder">
-      <h2>Titolo album</h2>
-      <p>Autore Album</p>
-      <span>Anno album</span>
+      <img :src="music.poster" alt="music.author">
+      <h2>{{music.title}}</h2>
+      <p>{{music.author}}</p>
+      <span>{{music.year}}</span>
   </div>
 </template>
 
