@@ -40,16 +40,15 @@ export default {
 main {
     background-color: var(--seconday-color);
 }
-.container {
-    padding: 100px;
-}
 .row {
     max-width: 1220px;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
+    
 }
 .col {
-    width: calc(100% / 5 - 20px);
-    margin: 0 10px;
+    width: calc(100% / 5 - 30px);
+    margin: 15px;
 }
 </style>
