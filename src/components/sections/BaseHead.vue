@@ -1,7 +1,7 @@
 <template>
-    <main>
+    <header>
       <img src="../../assets/img/spotify-logo.png" alt="logo-spotify">  
-    </main>
+    </header>
 </template>
 
 <script>
@@ -11,8 +11,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-main {
-    background-color: #2e3a46;
+header {
+    background-color: var( --primary-color);
 
     & img {
         max-width: 4%;
