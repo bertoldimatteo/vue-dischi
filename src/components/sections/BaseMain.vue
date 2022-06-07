@@ -2,7 +2,7 @@
   <main>
     <div class="container">
         <div class="row">
-            <MusicCard class="col-sm-12 col-md-4 col-lg" v-for="(music ,index) in musics" :key="index"/>      
+            <MusicCard class="col" v-for="(music ,index) in musics" :key="index"/>      
         </div>
     </div>
   </main>
@@ -42,5 +42,14 @@ main {
 }
 .container {
     padding: 100px;
+}
+.row {
+    max-width: 1220px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.col {
+    width: calc(100% / 5 - 20px);
+    margin: 0 10px;
 }
 </style>
