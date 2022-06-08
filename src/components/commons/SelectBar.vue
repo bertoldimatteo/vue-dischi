@@ -1,7 +1,7 @@
 <template>
     <div class="select-form">
-        <label for="music">Genere:</label>
-        <select id="genere" name="genre-music" form="musicGenre">
+        <label>Genere:</label>
+        <select v-model="selectFilter" @click.capture="$emit('searching', selectFilter)">
             <option value="All">All</option>
             <option value="Rock">Rock</option>
             <option value="Pop">Pop</option>
@@ -14,6 +14,11 @@
 <script>
 export default {
     name: 'SelectBar',
+    data() {
+        return {
+            selectFilter: '',
+        }
+    }
 }
 </script>
 
