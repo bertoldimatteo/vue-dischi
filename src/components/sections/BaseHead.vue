@@ -4,7 +4,7 @@
             <div class="image">
                 <img src="../../assets/img/spotify-logo.png" alt="logo-spotify"> 
             </div> 
-            <SelectBar/>
+            <SelectBar @searching="filterMusic"/>
         </div>
     </header>
 </template>
@@ -16,6 +16,11 @@ export default {
     components: { 
         SelectBar 
     },
+    methods: {
+        filterMusic(payload) {
+            console.log(payload);
+        }
+    }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
     <div class="select-form">
         <label>Genere:</label>
-        <select v-model="selectFilter" @click.capture="$emit('searching', selectFilter)">
+        <select v-model="selectFilter" @change="$emit('searching', selectFilter)">
             <option value="All">All</option>
             <option value="Rock">Rock</option>
             <option value="Pop">Pop</option>
