@@ -1,7 +1,7 @@
 <template>
     <div class="select-form">
         <label>Genere:</label>
-        <select v-model="selectFilter" @change="$emit('searching', selectFilter)">
+        <select v-model="dataShared.selectFilter" @change="$emit('searching', selectFilter)">
             <option value="All">All</option>
             <option value="Rock">Rock</option>
             <option value="Pop">Pop</option>
@@ -12,11 +12,13 @@
 </template>
 
 <script>
+import dataShared from '../../shared/dataShared.js'
+
 export default {
     name: 'SelectBar',
     data() {
         return {
-            selectFilter: '',
+            dataShared
         }
     }
 }

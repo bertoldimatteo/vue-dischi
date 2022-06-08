@@ -4,13 +4,27 @@
             <div class="image">
                 <img src="../../assets/img/spotify-logo.png" alt="logo-spotify"> 
             </div> 
+            <div class=selectBar>
+                <SelectBar @searching="dataShared.selectFilter"/>
+            </div>
         </div>
     </header>
 </template>
 
 <script>
+import dataShared from '../../shared/dataShared.js'
+import SelectBar from '../commons/SelectBar.vue'
+
 export default {
     name: 'BaseHeader',
+    data() {
+        return {
+            dataShared,
+        }
+    },
+    components: {
+        SelectBar, 
+    },
 }
 </script>
 

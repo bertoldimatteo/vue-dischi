@@ -4,29 +4,25 @@
         <div class="row">
             <MusicCard class="col" v-for="(music ,index) in musicFiltered" :key="index" :music="music"/>      
         </div>
-        <div class=selectBar>
-            <SelectBar @searching="filterMusic"/>
-        </div>
     </div>
   </main>
 </template>
 
 <script>
 import axios from 'axios';
-import MusicCard from '../commons/MusicCard.vue';
-import SelectBar from '../commons/SelectBar.vue'
+import MusicCard from '../commons/MusicCard.vue'
+import dataShared from '../../shared/dataShared.js'
 
 export default {
     name: 'BaseMain',
     data() {
         return {
+            dataShared,
             musics: [],
-            payload: '',
         }
     },
     components: {
         MusicCard,
-        SelectBar, 
     },
     created() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
@@ -39,14 +35,9 @@ export default {
             console.log(error);
         })
     },
-    methods: {
-        filterMusic(payload) {
-            this.payload = payload;
-        }
-    },
     computed: {
         musicFiltered() {
-            return this.musics.filter((elm) => elm.genre.includes(this.payload));
+            return this.musics.filter((elm) => elm.genre.includes(this.dataShared.selectFilter));
         }
     },
 }
@@ -56,9 +47,6 @@ export default {
 main {
     background-color: var(--seconday-color);
     height: calc(100vh - 66px)
-}
-.container {
-    display: flex;
 }
 .row {
     max-width: 1220px;
