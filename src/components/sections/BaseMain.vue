@@ -2,7 +2,7 @@
   <main>
     <div class="container">
         <div class="row">
-            <MusicCard class="col" v-for="(music ,index) in musics" :key="index" :music="music"/>      
+            <MusicCard class="col" v-for="(music ,index) in musicFiltered" :key="index" :music="music"/>      
         </div>
         <div class=selectBar>
             <SelectBar @searching="filterMusic"/>
@@ -21,7 +21,7 @@ export default {
     data() {
         return {
             musics: [],
-            musicFiltered: [],
+            payload: '',
         }
     },
     components: {
@@ -41,9 +41,14 @@ export default {
     },
     methods: {
         filterMusic(payload) {
-            console.log(payload);
+            this.payload = payload;
         }
-    }
+    },
+    computed: {
+        musicFiltered() {
+            return this.musics.filter((elm) => elm.genre.includes(this.payload));
+        }
+    },
 }
 </script>
 
