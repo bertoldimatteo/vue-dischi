@@ -4,22 +4,18 @@
             <div class="image">
                 <img src="../../assets/img/spotify-logo.png" alt="logo-spotify"> 
             </div> 
-            <div class="select-form">
-                <label for="music">Genere:</label>
-                <select id="genere" name="genre-music" form="musicGenre">
-                    <option value="Rock">Rock</option>
-                    <option value="Pop">Pop</option>
-                    <option value="Jazz">Jazz</option>
-                    <option value="Metal">Metal</option>
-                </select>
-            </div>
+            <SelectBar/>
         </div>
     </header>
 </template>
 
 <script>
+import SelectBar from '../commons/SelectBar.vue'
 export default {
     name: 'BaseHeader',
+    components: { 
+        SelectBar 
+    },
 }
 </script>
 
@@ -38,11 +34,5 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.select-form {
-    color: #fff;
-}
-select {
-    margin: 10px;
 }
 </style>
