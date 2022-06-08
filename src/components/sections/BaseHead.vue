@@ -4,23 +4,13 @@
             <div class="image">
                 <img src="../../assets/img/spotify-logo.png" alt="logo-spotify"> 
             </div> 
-            <SelectBar @searching="filterMusic"/>
         </div>
     </header>
 </template>
 
 <script>
-import SelectBar from '../commons/SelectBar.vue'
 export default {
     name: 'BaseHeader',
-    components: { 
-        SelectBar 
-    },
-    methods: {
-        filterMusic(payload) {
-            console.log(payload);
-        }
-    }
 }
 </script>
 

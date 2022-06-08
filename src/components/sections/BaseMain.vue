@@ -4,6 +4,9 @@
         <div class="row">
             <MusicCard class="col" v-for="(music ,index) in musics" :key="index" :music="music"/>      
         </div>
+        <div class=selectBar>
+            <SelectBar @searching="filterMusic"/>
+        </div>
     </div>
   </main>
 </template>
@@ -11,16 +14,19 @@
 <script>
 import axios from 'axios';
 import MusicCard from '../commons/MusicCard.vue';
+import SelectBar from '../commons/SelectBar.vue'
 
 export default {
     name: 'BaseMain',
     data() {
         return {
             musics: [],
+            musicFiltered: [],
         }
     },
     components: {
         MusicCard,
+        SelectBar, 
     },
     created() {
         axios.get('https://flynn.boolean.careers/exercises/api/array/music')
@@ -32,6 +38,11 @@ export default {
             // handle error
             console.log(error);
         })
+    },
+    methods: {
+        filterMusic(payload) {
+            console.log(payload);
+        }
     }
 }
 </script>
@@ -40,6 +51,9 @@ export default {
 main {
     background-color: var(--seconday-color);
     height: calc(100vh - 66px)
+}
+.container {
+    display: flex;
 }
 .row {
     max-width: 1220px;
